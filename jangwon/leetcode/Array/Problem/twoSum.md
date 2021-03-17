@@ -1,5 +1,3 @@
-
-
 # Array
 
 ## 1. Two Sum
@@ -30,6 +28,30 @@ var twoSum = function(nums, target) {
     
     return arr;
 };
+```
+
+
+```js
+var twoSum = function(nums, target) {
+    let result = [];
+    nums.reduce((acc,val,idx)=>{
+        let sub = target - val;
+        for(let i=idx+1; i<nums.length; i++) {
+            if(sub === nums[i]) {
+                // console.log(idx,i);
+              result.push(idx,i);
+                
+            }
+        }
+    },[])
+    
+    return result;
+};
+```
+
+
+```js
+
 ```
 
 **레퍼런스 풀이**
