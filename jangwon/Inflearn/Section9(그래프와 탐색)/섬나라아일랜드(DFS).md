@@ -25,8 +25,6 @@ function solution(board){
       }
     }
   }
-  dfs(0,0);
-
   return result;
 }
 let arr=[[1, 1, 0, 0, 0, 1, 0], 
