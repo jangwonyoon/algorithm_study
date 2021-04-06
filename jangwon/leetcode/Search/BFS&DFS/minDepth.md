@@ -11,6 +11,7 @@
 * DFS 풀이 
 
 ```js
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -23,6 +24,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
+ 
 var minDepth = function(root) {
     let result = Number.MAX_VALUE;
     if(!root) return 0;
