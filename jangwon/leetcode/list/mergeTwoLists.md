@@ -4,6 +4,10 @@
 
 ### https://leetcode.com/problems/merge-two-sorted-lists/
 
+**파이썬 풀이**
+
+재귀 구조로 연결
+
 ```py
 # Definition for singly-linked list.
 # class ListNode:
