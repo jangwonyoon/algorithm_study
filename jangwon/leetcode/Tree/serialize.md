@@ -78,3 +78,77 @@ class Codec:
 # deser = Codec()
 # ans = deser.deserialize(ser.serialize(root))
 ```
+
+```js
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+
+/**
+ * Encodes a tree to a single string.
+ *
+ * @param {TreeNode} root
+ * @return {string}
+ */
+var serialize = function(root) {
+    if(!root) return [];
+    
+    let result = ['#'];
+    let queue = [root];
+    
+    while(queue.length){
+        let node = queue.shift();
+        if(node){
+            queue.push(node.left);
+            queue.push(node.right);
+            
+            result.push(node.val + '');
+        }else{
+            result.push('#');
+        }
+    }
+    return result.join('');
+};
+
+/**
+ * Decodes your encoded data to tree.
+ *
+ * @param {string} data
+ * @return {TreeNode}
+ */
+var deserialize = function(data) {
+    if(!data.length) return null;
+    
+    let nodes = data.split('');
+    
+    let root = new TreeNode(+nodes[1]);
+    let queue = [root];
+    let idx = 2;
+    
+    while(queue.length){
+        let node = queue.shift();
+        
+        if(nodes[idx] !== '#'){
+            node.left = new TreeNode(+(nodes[idx]));
+            queue.push(node.left);
+        }
+        idx++;
+        
+        if(nodes[idx] !== '#'){
+            node.right = new TreeNode(+(nodes[idx]));
+            queue.push(node.right);
+        }
+        idx++;
+    }
+    return root;
+};
+
+/**
+ * Your functions will be called as such:
+ * deserialize(serialize(root));
+ */
+```
