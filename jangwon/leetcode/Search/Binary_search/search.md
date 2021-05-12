@@ -43,3 +43,18 @@ class Solution:
         
         return -1
 ```
+
+bisect - 배열 이진 알고리즘을 사용한 풀이
+
+- https://docs.python.org/ko/3/library/bisect.html
+
+```py
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        idx = bisect.bisect_left(nums, target)
+        
+        if idx < len(nums) and nums[idx] == target:
+            return idx
+        else:
+            return -1
+```
