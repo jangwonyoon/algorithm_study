@@ -63,6 +63,7 @@ class Solution:
             if i < len(nums) and numbers[i + k + 1] == expected:
                 return k + 1, i + k + 2
 ```
+**bisect 모듈 + 슬라이싱**
 
 ```py
 class Solution:
